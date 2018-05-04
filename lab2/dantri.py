@@ -45,4 +45,3 @@ for li in li_list:
     # print()
 # print(item_list)
 pyexcel.save_as(records=item_list,dest_file_name="test1.xlsx")
-# soup.find("div",id='main',class_='main')

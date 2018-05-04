@@ -8,22 +8,29 @@ raw_data=conn.read()
 text = raw_data.decode("utf8")
 
 soup = BeautifulSoup(text,"html.parser")
+# header
+tblGridData=soup.find("table",id='tblGridData')
+td_list = tblGridData.find_all("td")
+header_list=[]
+for td in td_list:
+    header = td.string
+    header_list.append(header)
+# print(header_list)
 
-# tblGridData = soup.find("table","tblGridData")
-# td_list=tblGridData.find_all("td")
-# header_list=[]
-# for td in td_list:
-#     header = td.string
-#     header_list.append(header)
-
-# table = soup.find("table","tableContent")
-# tr_list=table.find_all("tr")
-# content_list=[]
-# for tr in tr_list:
-#     name_content = tr.string
-#     content_list.append(name_content)
+# content
+tableContent = soup.find("table",id="tableContent")
+td_list=tableContent.find_all("td")
+content_list=[]
+for td in td_list:
+    name_content = td.string
+    content_list.append(name_content)
 # print(content_list)
-# print()
-
-
-# pyexcel.save_as(records=time_list,dest_file_name="song.xlsx")
+table=[]
+for i in range(len(header_list)-1):
+    for j in range(i,len(content_list),13):
+        dict={
+        header_list[i]:content_list[j]
+        }
+        table.append(dict)
+print(table)
+pyexcel.save_as(records=table,dest_file_name="vnm.xlsx")
