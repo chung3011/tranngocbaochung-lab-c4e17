@@ -32,5 +32,5 @@ for i in range(len(header_list)-1):
         header_list[i]:content_list[j]
         }
         table.append(dict)
-print(table)
+
 pyexcel.save_as(records=table,dest_file_name="vnm.xlsx")
