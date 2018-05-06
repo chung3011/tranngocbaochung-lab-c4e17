@@ -31,7 +31,7 @@ table=[]
 
 for tr in tr_list:
     td_list=tableContent.find_all("td")
-    data={}
+    dict={}
     if td_list and td_list[0].string is not None:
         dict['Title'] = (td_list[0].string.strip())
         dict['4-2016'] = (td_list[1].string)
@@ -39,6 +39,6 @@ for tr in tr_list:
         dict['2-2017'] = (td_list[3].string)
         dict['3-2017'] = (td_list[4].string)
     if dict:
-        table.append(data)
+        table.append(dict)
 
 pyexcel.save_as(records=table,dest_file_name="vnm.xlsx")
