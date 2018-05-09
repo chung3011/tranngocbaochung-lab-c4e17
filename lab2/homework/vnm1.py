@@ -9,15 +9,15 @@ text = raw_data.decode("utf8")
 
 soup = BeautifulSoup(text,"html.parser")
 
-# header
-tblGridData=soup.find("table",id='tblGridData')
-td_list = tblGridData.find_all("td")
-header_list=['']
-for td in td_list:
-    if td and td.string is not None:
-        header = td.string.strip()
-        header_list.append(header)
-header_list.remove("Tăng trưởng")
+# # header
+# tblGridData=soup.find("table",id='tblGridData')
+# td_list = tblGridData.find_all("td")
+# header_list=['']
+# for td in td_list:
+#     if td and td.string is not None:
+#         header = td.string.strip()
+#         header_list.append(header)
+# header_list.remove("Tăng trưởng")
 # print(header_list)
 
 # content
@@ -29,12 +29,12 @@ for tr in tr_list:
     td_list=tr.find_all("td")
     dict={}
     if td_list and td_list[0].string is not None:
-        dict[header_list[0]] = (td_list[0].string.strip())
-        dict[header_list[1]] = (td_list[1].string)
-        dict[header_list[2]] = (td_list[2].string)
-        dict[header_list[3]] = (td_list[3].string)
-        dict[header_list[4]] = (td_list[4].string)
+        dict['Title'] = (td_list[0].string.strip())
+        dict['4-2016'] = (td_list[1].string)
+        dict['1-2017'] = (td_list[2].string)
+        dict['2-2017'] = (td_list[3].string)
+        dict['3-2017'] = (td_list[4].string)
     if dict:
         table.append(dict)
 
-pyexcel.save_as(records=table,dest_file_name="vnm.xlsx")
+pyexcel.save_as(records=table,dest_file_name="vnm1.xlsx")
