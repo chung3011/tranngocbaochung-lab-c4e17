@@ -16,10 +16,9 @@ while num[len(num)-1] == " " :
     del num[len(num)-1]
 # print(num)
 for i in range(len(num)):
-    if (i+1) < (len(num)+1) :
-        if num[i] == " " and num[i+1] == " " :
-            continue
-        elif num[i] != " ":
-            print(num[i],end="")
-        else:
-            print()
+    if num[i] == " " and num[i+1] == " " :
+        continue
+    elif num[i] != " ":
+        print(num[i],end="")
+    else:
+        print()

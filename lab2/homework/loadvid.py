@@ -17,11 +17,11 @@ from youtube_dl import YoutubeDL
 
 
 # Sample 3: Download audio
-# options = {
-#     'format': 'bestaudio/audio' # Tell the downloader to download only the best quality of audio
-# }
-# dl = YoutubeDL(options)
-# dl.download(['https://www.youtube.com/watch?v=c3jHlYsnEe0'])
+options = {
+    'format': 'bestaudio/audio' # Tell the downloader to download only the best quality of audio
+}
+dl = YoutubeDL(options)
+dl.download(['https://www.youtube.com/watch?v=FkOt19CUC30'])
 
 
 
@@ -35,10 +35,10 @@ from youtube_dl import YoutubeDL
 
 
 # Sample 5: Search and then download the first audio
-options = {
-    'default_search': 'ytsearch', # tell downloader to search instead of directly downloading
-    'max_downloads': 1, # Tell downloader to download only the first entry (audio)
-    'format': 'bestaudio/audio'
-}
-dl = YoutubeDL(options)
-dl.download(['Nhớ mưa sài gòn lam trường'])
+# options = {
+#     'default_search': 'ytsearch', # tell downloader to search instead of directly downloading
+#     'max_downloads': 1, # Tell downloader to download only the first entry (audio)
+#     'format': 'bestaudio/audio'
+# }
+# dl = YoutubeDL(options)
+# dl.download(['Nhớ mưa sài gòn lam trường'])

@@ -6,7 +6,7 @@ while True:
         continue
     else:
         break
-print(e)
+# print(e)
 
 hit = []
 for i in range(4):
@@ -23,11 +23,11 @@ loop1=True
 while loop:
     count=0
     check=0
-    n=input("Nhập vào hoành độ (0-3) và tung độ (0-3) của đạn ( cách nhau bằng dấu cách): ")
+
+    n=input("Nhập vào hoành độ (0-3) và tung độ (0-3) của đạn ( cách nhau bằng dấu cách ): ")
     if n=="out":
         break
     num=list(n)
-
     for i in n:
         if i <= "/" or i >= ":":
             num.remove(i)
@@ -35,7 +35,6 @@ while loop:
     if len(num)!=2:
         print("Nhập lại!")
         continue
-
     r=[int(num[0]),int(num[1])]
     # print(r)
     if r[0] > 3 or r[1] > 3:
@@ -101,8 +100,13 @@ while loop:
     if check==0:
         print("miss")
 
+    print(count,"enemy(s) around")
+    print(count_r,"rocket(s) left")
+    print(count_e,"enemy(s) left")
+
     if count_r < 1:
         if count_e > 0:
+            print("out of rocket")
             print("lose")
             loop = False
         else:
@@ -111,8 +115,3 @@ while loop:
     elif count_e < 1:
         print("win")
         loop = False
-
-    print(count,"enemy(s) around")
-    print(count_r,"rocket(s) left")
-    print(count_e,"enemy(s) left")
-    continue

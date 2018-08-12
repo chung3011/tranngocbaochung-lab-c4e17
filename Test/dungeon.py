@@ -29,6 +29,7 @@ for i in range(4):
         else:
             print("_",end=" ")
     print()
+    # p[0] : x; p[1] : y
 while True:
     p_input=input("move:").lower()
     if p_input=="w":

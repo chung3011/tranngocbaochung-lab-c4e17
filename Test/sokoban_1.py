@@ -10,6 +10,13 @@ g = {
     "x": 1,
     "y": 3
 }
+print('''Let's play!
+P: player, B: box, G: gate
+press W to move up
+press S to move down
+press A to move left
+press D to move right
+press 0 to exit''')
 while True:
     for y in range(4):
         for x in range(4):
@@ -22,6 +29,7 @@ while True:
             else:
                 print("- ", end="")
         print()
+
     if b["x"] ==g["x"] and b["y"] == g["y"]:
         print("Win")
         break
